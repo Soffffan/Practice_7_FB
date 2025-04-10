@@ -4,7 +4,9 @@ const ASSETS = [
     '/index.html',
     '/app.js',
     '/style.css',
-    '/manifest.json'
+    '/manifest.json',
+    '/icons/delete.png',
+    '/icons/pen.png'
 ];
 
 // Установка Service Worker и кэширование ресурсов

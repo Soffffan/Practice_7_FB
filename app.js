@@ -7,6 +7,7 @@ if ('serviceWorker' in navigator) {
         } catch (err) {
             console.error('Ошибка регистрации:', err);
         }
+
     });
 }
 
@@ -21,15 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const notesContainer = document.getElementById('notes-container');
     const offlineNotice = document.getElementById('offline-notice');
 
-    // Проверка соединения
+    
     window.addEventListener('online', () => offlineNotice.style.display = 'none');
     window.addEventListener('offline', () => offlineNotice.style.display = 'block');
 
-    // Загрузка заметок из localStorage
+    
     let notes = JSON.parse(localStorage.getItem('notes')) || [];
     let editingIndex = null;
 
-    // Функция для отображения заметок
+    
     function renderNotes() {
         notesContainer.innerHTML = '';
         notes.forEach((note, index) => {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Функция для добавления заметки
+    
     function addNote() {
         const noteText = noteInput.value.trim();
         if (noteText) {
@@ -69,24 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Функция для удаления заметки
+    
     window.deleteNote = function(index) {
         notes.splice(index, 1);
         localStorage.setItem('notes', JSON.stringify(notes));
         renderNotes();
     }
 
-    // Функция для редактирования заметки
+    
     window.editNote = function(index) {
         noteInput.value = notes[index];
         editingIndex = index;
         app.style.display = 'block';
     }
 
-    // Обработчик кнопки "Добавить"
+    
     addNoteBtn.addEventListener('click', addNote);
 
-    // Обработчик кнопки "+"
+    
     toggleAddBtn.addEventListener('click', () => {
         if (app.style.display === 'none') {
             app.style.display = 'block';
@@ -95,6 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Первоначальная отрисовка заметок
+    
     renderNotes();
 });
