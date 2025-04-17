@@ -1,0 +1,226 @@
+/* === Базовая стилизация страницы === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #c8d5b9;
+}
+
+/* === Хэдер === */
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 70px;
+    border-bottom: 3px solid #8fc0a9;
+}
+
+#toggle-add-btn {
+    margin: 10px;
+    padding: 10px;
+    background-color: #8fc0a9;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    height: 55px;
+    width: 55px;
+}
+
+#toggle-add-btn:hover {
+    background-color: #7ca982c8;
+}
+
+/* === Добавление задачи === */
+#app {
+    background: #faf3dd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 800px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+#note-input-container {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #8fc0a9;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+button {
+    width: 30%;
+    max-width: 800px;
+    height: 50px;
+    padding: 10px;
+    background-color: #8fc0a9;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7ca982c8;
+}
+
+/* === Контейнер задач === */
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.note-item {
+    background-color: #faf3dd;
+    border: 1px solid #faf3dd;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px #7ca982;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.note-item p {
+    margin: 10px;
+    word-wrap: break-word;
+}
+
+.note-item .icon-container {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    align: right;
+}
+
+.note-item .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    height: 16px;
+    width: 16px;
+}
+
+.note-item .icon-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+/* === Оповещение об офлайне === */
+#offline-notice {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* === Новое: Стили задач (с чекбоксами) === */
+.task {
+    background-color: #faf3dd;
+    border: 1px solid #8fc0a9;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto;
+    box-shadow: 2px 2px 5px rgba(124, 169, 130, 0.5);
+}
+
+.task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #8fc0a9;
+    cursor: pointer;
+}
+
+.task span {
+    flex-grow: 1;
+    font-size: 16px;
+    word-break: break-word;
+}
+
+.task span.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* === Новое: Фильтры === */
+#filters {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+#filters button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+#filters button:hover {
+    background-color: #8fc0a9;
+    color: white;
+}
+
+/* === Блок уведомлений и тестовая панель === */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.send-box {
+    margin-top: 15px;
+}
+
+.send-box textarea,
+.send-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
